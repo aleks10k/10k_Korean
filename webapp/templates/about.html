@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META
+    ................................................................................................................ -->
+    <meta charset="utf-8">
+    <title>10kKorean</title>
+    <meta name="description" content="10kKorean application about page.">
+    <meta name="author" content="aleks10k">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FAVICON
+    ................................................................................................................ -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png')}}" type="image/png" >
+
+    <!-- FONTS
+    ................................................................................................................ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap">
+
+    <!-- CSS
+    ................................................................................................................ -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about-style.css')}}">
+
+</head>
+<body>
+    <!-- HEADER
+    .................................................................................................................-->
+    <header>
+        <!-- Hidden on mobile phones
+        .............................................................................................................-->
+        <div class="row hide-below-550">
+            <div id="Logo-bar">
+                <img src="{{ url_for('static', filename='images/logo_78x84.png')}}" width="78" height="84">
+            </div>
+        </div>
+
+        <br class="hide-below-550">
+        <!-- Visible on mobile phones
+        .............................................................................................................-->
+        <div class="row hide-above-550">
+            <div id="Logo-bar-mobile">
+                <img src="{{ url_for('static', filename='images/logo_80x80.png')}}" width="46" height="46">
+                <div class="col-04">
+                    <a class="links-mobile" href="/">app</a>
+                </div>
+                <div class="col-04">
+                    <a class="links-mobile" href="/theory">theory</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <!-- Hidden on mobile phones only
+        .............................................................................................................-->
+        <div class="row hide-below-550">
+            <div class="col-01 align-center"></div>
+            <div class="col-01 align-center"><a id="Link-about" class="links" href="/">app</a></div>
+            <div class="col-01 align-center"><a id="Link-theory" class="links" href="/theory">theory</a></div>
+            <div class="col-09"></div>
+        </div>
+        <!-- ....................................................................................................... -->
+    </section>
+
+    <main>
+        <div id="Text">
+            <div class="row">
+                <div class="col-06">
+                    <h1>About the application</h1>
+                    <p>This application can help you if you learn to read korean.</p>
+                    <p>It would be better if you already have spent a week or two learning the basic phonetics.</p>
+                    <p>There is a simple theory <a href="/theory">page</a> where you can listen to how letters or syllables sound.</p>
+                    <p>The app is going to be extended for training not only basic reading but grammar as well.</p>
+                </div>
+                <div class="col-06">
+                    <h1>Contacts</h1>
+                    <p></p>
+                    <p>Telegram </p>
+                    <p>Github</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-06">
+                    <h1>How it works</h1>
+                    <p>Click the settings button on the application page, check question content you want to see and click the apply button.</p>
+                    <p>Chosen set of questions is repeated endlessly until you change settings.</p>
+                    <p>Easy level contains all the letters of the alphabet.</p>
+                    <p>Medium level contains simple syllables that are of consonant + vowel composition.</p>
+                    <p>Hard level consists of all korean syllables that have consonant + vowel + consonant (patchim) composition.</p>
+                    <br>
+                    <p>The progress bar reflects a percent of correctly answered questions.</p>
+                    <p>It isn't reset if you close a browser or refresh the page. It's reset if you click the reset button.</p>
+                </div>
+                <div class="col-06">
+                    <h1>Android app</h1>
+                    <p>There is none. I am going to build one as soon as I have got experienced enough to build an Android app.</p>
+                    <p>This web app can be used on a phone due to responsive design.</p>
+                    <img class="demonstration hide-below-550" src="{{ url_for('static', filename='images/app-mobile.png')}}" width="206" height="358">
+                    <img class="demonstration hide-below-550" src="{{ url_for('static', filename='images/app-mobile-sidenav.png')}}" width="206" height="358">
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

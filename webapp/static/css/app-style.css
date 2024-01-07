@@ -1,0 +1,387 @@
+
+/*  
+CONTENT
+
+1. GENERAL
+2. HEADER  
+  2.1. Logo bar
+  2.2. Logo bar - mobile
+3. MAIN    
+  3.1. Links
+  3.2. Settings buttons
+  3.3. Instruction text
+  3.4. Question text
+  3.5. Option buttons
+4. SIDENAV
+  4.1. Sidenav general
+  4.2. Sidenav buttons
+  4.3. Sidenav text
+5. STATISTICS
+  5.1. Statistics bar and progress bar
+  5.2. Statistics reset button
+6. MISC
+*/
+
+/* || 1. GENERAL
+......................................................................................................................*/
+body {
+  background-color: rgb(248, 245, 242);
+  font-family:      'Play', sans-serif;
+  margin:           0 0 0 0;
+}
+
+* {
+  box-sizing:       border-box;
+}
+
+.row::after {
+  content:          "";
+  clear:            both;
+  display:          table;
+}
+
+[class*="col-"] {
+  float:            left;
+  padding:          15px;
+}
+
+.col-01     {width: 8.33%;}
+.col-02     {width: 16.66%;}
+.col-03     {width: 25%;}
+.col-04     {width: 33.33%;}
+.col-05     {width: 41.66%;}
+.col-06     {width: 50%;}
+.col-07     {width: 58.33%;}
+.col-08     {width: 66.66%;}
+.col-09     {width: 75%;}
+.col-10     {width: 83.33%;}
+.col-11     {width: 91.66%;}
+.col-12     {width: 100%;}
+
+/* || 2. HEADER
+..................................................................................................................... */
+/* 2.1. Logo bar
+......................................................................................................................*/
+#Logo-bar {         
+  background-color: rgb(35, 35, 35);
+  box-shadow:       0 10px rgba(35, 35, 35, 0.85);
+  height:           85px;
+}
+
+#Logo-bar img {
+  display:          inline-block;
+  margin:           0 0 0 9.5%;
+}
+
+/* 2.2. Logo bar - mobile
+......................................................................................................................*/
+#Logo-bar-mobile {  
+  background-color: rgb(35, 35, 35);
+  border-bottom:    1px solid rgb(249, 188, 96);
+  box-shadow:       0 4px rgba(35, 35, 35, 0.85);
+  height:           52px;
+  padding:          2px 0 0 0;
+  text-align:       right;
+}
+
+#Logo-bar-mobile img {
+  float:            left;
+  margin:           0 0 0 25px;
+}
+
+.settings-buttons-mobile {
+  background-color: transparent;
+  border:           none;
+  color:            rgb(248, 245, 242);
+  font-size:        2.5em;
+  height:           50px;
+  width:            50px;
+}
+
+/* || 3. MAIN
+..................................................................................................................... */
+/* 3.1. Links
+......................................................................................................................*/
+.links {
+  background-color: transparent;
+  border:           3px solid rgba(37, 37, 37, 0.5);
+  border-radius:    8px;
+  color:            rgba(37, 37, 37, 0.5);
+  display:          block;
+  font-size:        1.5em;
+  text-align:       center;
+  text-decoration:  none;
+  transition:       0.1s;
+  padding:          10px 0 10px 0;
+  width:            100%;
+}
+
+.links:hover {
+  border:           3px solid rgb(37, 37, 37);
+  color:            rgb(37, 37, 37);
+  transform:        scale(1.1, 1.1);
+}
+
+/* 3.2. Settings buttons
+......................................................................................................................*/
+.settings-buttons {
+  background-color: rgb(248, 245, 242);
+  border:           3px solid rgb(35, 35, 35);
+  border-radius:    50%;
+  box-shadow:       8px 8px rgba(35, 35, 35, 0.9);
+  color:            rgb(35, 35, 35);
+  font-size:        4.1em;
+  height:           80px;
+  padding:          0 0 0 0;
+  transition:       0.1s;
+  width:            80px;
+}
+
+.settings-buttons:hover {
+  background-color: rgb(249, 188, 96);
+  box-shadow:       10px 10px rgba(35, 35, 35, 0.85);
+  transform:        translate(-4px, -4px);
+}
+
+.settings-buttons:active {
+  background-color: rgb(249, 188, 96);
+  box-shadow:       4px 4px rgba(35, 35, 35, 1);
+  transform:        translate(4px, 4px);
+}
+
+/* 3.3. Instruction text
+......................................................................................................................*/
+#Instruction-text {
+  color:            rgba(37, 37, 37, 0.5);
+  font-size:        2em;
+  text-align:       center;
+}
+
+#Instruction-text .icon-font {
+  font-size:        1em;
+}
+
+/* 3.4. Question text
+......................................................................................................................*/
+#Question {
+  color:            rgb(249, 188, 96);
+  font-size:        25em;
+  font-weight:      900;
+  line-height:      1.0;
+  margin:           0 0 0 0;
+  text-align:       right;
+  text-shadow:      8px 8px rgba(35, 35, 35, 0.9);
+}
+
+/* 3.5. Option buttons
+......................................................................................................................*/
+.option-buttons {
+  background-color: rgb(248, 245, 242);
+  border:           3px solid rgb(35, 35, 35);
+  border-radius:    8px;
+  box-shadow:       8px 8px rgba(35, 35, 35, 0.9);
+  box-sizing:       border-box;
+  color:            rgb(35, 35, 35);
+  display:          block;
+  font-size:        3.5em;
+  margin:           16px 0 16px 16px;
+  min-width:        33.33%;
+  padding:          0 0 8px 0;
+  transition:       0.1s;
+}
+
+.option-buttons:active {
+  box-shadow:       4px 4px rgba(35, 35, 35, 1);
+  transform:        translate(4px, 4px);
+}
+
+/* || 4. SIDENAV
+......................................................................................................................*/
+/* 4.1. Sidenav general
+......................................................................................................................*/
+#Sidenav {
+  background-color: rgb(35, 35, 35);
+  box-shadow:       12px 0 rgba(35, 35, 35, 0.6);
+  height:           100%;
+  left:             0;
+  overflow-x:       hidden;
+  padding:          0 0 0 0;
+  position:         fixed;
+  transition:       0.5s;
+  top:              0;
+  width:            0;
+  z-index:          1;
+}
+
+/* 4.2. Sidenav buttons
+......................................................................................................................*/
+#Sidenav-close-button-mobile {
+  background-color: transparent;
+  border-width:     0;
+  color:            rgb(249, 188, 96);
+  font-size:        2em;
+  margin:           12px 26px 0 0;
+}
+
+.sidenav-buttons {
+  background-color: rgb(35, 35, 35);
+  border:           3px solid rgb(249, 188, 96);
+  border-radius:    8px;
+  color:            rgb(249, 188, 96);
+  height:           65px;
+  margin:           0 0 0 15px;
+  transition:       0.1s;
+  width:            65px;
+}
+
+.links-mobile {
+  background-color: transparent;
+  color:            rgb(249, 188, 96);
+  display:          block;
+  font-size:        0.6;
+  text-align:       left;
+  padding:          0 0 0 15px;
+  margin:           12px 0 0 0;
+}
+
+.sidenav-buttons.icon-font {
+  font-size:        3em;
+}
+
+.sidenav-buttons#Sidenav-close-button {
+  border-radius:    50%;
+  height:           75px;
+  margin:           20px 0 -20px 0;
+  padding:          0 0 0 0;
+  width:            75px;
+}
+
+.sidenav-buttons.difficulty-buttons {
+  font-size:        2em;
+  width:            150px;
+}
+
+.sidenav-buttons.apply-buttons {
+  font-size:        2em;
+  width:            150px;
+}
+
+.sidenav-buttons:active {
+  transform:        translate(4px, 4px);
+}
+
+.white:hover {
+  background-color: rgb(248, 245, 242);
+  box-shadow:       6px 6px 48px rgba(248, 245, 242, 0.8);
+}
+
+.orange:hover {
+  background-color: rgb(255, 140, 26);
+  box-shadow:       6px 6px 48px rgba(255, 140, 26, 0.8);
+}
+
+.red:hover {
+  background-color: rgb(244, 93, 72);
+  box-shadow:       6px 6px 48px rgba(244, 93, 72, 0.8);
+} 
+
+/* 4.3. Sidenav text
+......................................................................................................................*/
+#Sidenav .p-large {
+  color:            rgb(249, 188, 96);
+  font-size:        2.5em;
+  margin:           0 0 0 0;
+  padding:          2px 0 3px 15px;
+}
+
+#Sidenav .p-medium {
+  color:            rgb(249, 188, 96);
+  font-size:        2em;
+  margin:           0 0 0 0;
+  padding:          0 0 0 15px;
+}
+
+#Sidenav .p-small {
+  border-bottom:    1px solid rgba(249, 188, 96, 0.3);
+  color:            rgb(249, 188, 96);
+  font-size:        1.25em;
+  margin:           0 0 0 0;
+  padding:          0 0 0 15px;
+}
+
+#Sidenav .warnings {
+  background-color: rgb(244, 93, 72);
+  color:            rgb(248, 245, 242);
+  font-size:        1.5em;
+  margin:           0 0 0 0;
+  padding:          0 0 0 15px;
+}
+
+/* || 5. STATISTICS
+......................................................................................................................*/
+/* 5.1. Statistics bar and progress bar
+......................................................................................................................*/
+#Stat-bar {
+  background-color: rgba(249, 188, 96, 0.5);
+  box-shadow:       0 10px rgba(35, 35, 35, 0.85);
+  height:           95px;
+}
+
+#Stat-text {
+  color:            rgb(35, 35, 35);
+  font-size:        2em;
+  padding:          5px 5px;
+  text-align:       center;
+}
+
+#Stat-empty {
+  background-color: rgb(248, 245, 242);
+  border:           3px solid rgb(35, 35, 35);
+  border-radius:    8px;
+  height:           16px;
+  width:            100%;
+}
+
+#Stat-filler {
+  background-color: rgb(44, 182, 125);
+  border-radius:    4px;
+  height:           10px;
+  transition:       0.1s;
+  width:            50%;
+}
+
+/* 5.2. Statistics reset button
+......................................................................................................................*/
+#Counter-reset {
+  background-color: rgb(248, 245, 242);
+  border:           3px solid rgb(35, 35, 35);
+  border-radius:    8px;
+  box-shadow:       4px 4px rgba(35, 35, 35, 0.9);
+  box-sizing:       border-box;
+  color:            rgb(35, 35, 35);
+  font-size:        2em;
+  margin:           12px 0 12px 0;
+  padding:          5px;
+  transition:       0.1s;
+}
+
+#Counter-reset:active {
+  box-shadow:       4px 4px rgba(35, 35, 35, 1);
+  transform:        translate(4px, 4px);
+}
+
+/* || 6. MISC
+..................................................................................................................... */
+.icon-font          {font-family:   'Material Icons', sans-serif;}
+
+.align-left         {text-align:    left;}
+.align-center       {text-align:    center;}
+.align-right        {text-align:    right;}
+
+@media (min-width: 550px) {
+  .hide-above-550   {display: none;}
+}
+
+@media (max-width: 550px) {
+  .hide-below-550   {display: none;}
+}

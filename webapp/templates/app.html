@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META
+    ................................................................................................................ -->
+    <meta charset="utf-8">
+    <title>10kKorean</title>
+    <meta name="description" content="Korean reading learning application.">
+    <meta name="author" content="aleks10k">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FAVICON
+    ................................................................................................................ -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png')}}" type="image/png" >
+
+    <!-- FONTS
+    ................................................................................................................ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Play&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap">
+
+    <!-- CSS
+    ................................................................................................................ -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app-style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app-media.css')}}">
+
+</head>
+<body>
+    <!-- HEADER
+    ................................................................................................................ -->
+    <header>
+        <!-- Hidden on mobile phones only
+        ............................................................................................................ -->
+        <div class="row hide-below-550">
+            <div id="Logo-bar">
+                <img src="{{ url_for('static', filename='images/logo_78x84.png')}}" width="78" height="84">
+            </div>
+        </div>
+        <br class="hide-below-550">
+        <!-- ....................................................................................................... -->
+        <!-- Visible on mobile phones only
+        ............................................................................................................ -->
+        <div class="row hide-above-550">
+            <div id="Logo-bar-mobile">
+                <img src="{{ url_for('static', filename='images/logo_80x80.png')}}" width="46" height="46">
+                <button id="Font-button-mobile"     class="settings-buttons-mobile icon-font">draw</button>
+                <button id="DarkMode-button-mobile" class="settings-buttons-mobile icon-font">emoji_objects</button>
+                <button id="Mute-button-mobile"     class="settings-buttons-mobile icon-font">volume_up</button>
+                <button id="Settings-button-mobile" class="settings-buttons-mobile icon-font">settings</button>
+            </div>
+        </div>
+        <!-- ....................................................................................................... -->
+    </header>
+    <!-- MAIN
+    ................................................................................................................ -->
+    <main>
+        <!-- Question text and answer option buttons
+        ............................................................................................................ -->
+        <!-- Hidden on mobile phones only
+        ............................................................................................................ -->
+        <div class="row hide-below-550">
+            <div class="col-01 align-center"></div>
+            <div class="col-01 align-center"><a id="Link-about" class="links" href="/about">about</a></div>
+            <div class="col-01 align-center"><a id="Link-theory" class="links" href="/theory">theory</a></div>
+            <div class="col-01 align-center"></div>
+            <div class="col-01 align-center"><button id="Settings-button" class="settings-buttons icon-font">settings</button></div>
+            <div class="col-01 align-center"><button id="DarkMode-button" class="settings-buttons icon-font">emoji_objects</button></div>
+            <div class="col-01 align-center"><button id="Mute-button"     class="settings-buttons icon-font">volume_up</button></div>
+            <div class="col-01 align-center"><button id="Font-button"     class="settings-buttons icon-font">draw</button></div>
+            <div class="col-04 align-center"></div>
+        </div>
+
+        <div class="row">
+            <div id="Instruction-text" class="col-12 hide-below-550">
+                <div>Use <span class="icon-font">settings</span> button to set the difficulty.</div>
+            </div>
+        </div>
+        <!-- ....................................................................................................... -->
+        <div class="row">
+            <div class="col-06">
+                <div id="Question">&#160;</div>
+            </div>
+            <div class="col-06">
+                <div id="Option-buttons">
+                    <button id="Option-button-0" class="option-buttons">&#160;</button>
+                    <button id="Option-button-1" class="option-buttons">&#160;</button>
+                    <button id="Option-button-2" class="option-buttons">&#160;</button>
+                    <button id="Option-button-3" class="option-buttons">&#160;</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- SIDENAV SECTION
+    ................................................................................................................ -->
+    <section>
+        <div id="Sidenav">
+            <!-- Top
+             ....................................................................................................... -->
+            <!-- Hidden on mobile phones only
+             ....................................................................................................... -->
+            <div class="row hide-below-550">
+                <div class="col-08"></div>
+                <div class="col-04 align-center"><button id="Sidenav-close-button" class="sidenav-buttons icon-font">clear</button></div>
+            </div>
+            <!-- ................................................................................................... -->
+            <!-- Visible on mobile phones only
+             ....................................................................................................... -->
+            <div class="row hide-above-550 align-right">
+                <div class="col-04">
+                    <a class="links-mobile" href="/about">about</a>
+                </div>
+                <div class="col-04">
+                    <a class="links-mobile" href="/theory">theory</a>
+                </div>
+                <div class="col-04">
+                    <button id="Sidenav-close-button-mobile" class="icon-font">clear</button>
+                </div>
+            </div>
+            <!-- ................................................................................................... -->
+            <!-- Difficulty
+            ........................................................................................................ -->
+            <div class="row">
+              <div class="col-12"><p class="p-small">Difficlty</p></div>
+            </div>
+            <div class="row">
+              <div class="col-04"><button id="Easy-button" class="sidenav-buttons difficulty-buttons green">Easy</button></div>
+              <div class="col-04"><button id="Medium-button" class="sidenav-buttons difficulty-buttons orange">Medium</button></div>
+              <div class="col-04"><button id="Hard-button" class="sidenav-buttons difficulty-buttons red">Hard</button></div>
+            </div>
+            <div class="row">
+              <div class="col-12"><p class="p-small">Includes</p></div>
+            </div>
+            <!-- Easy settings
+            ........................................................................................................ -->
+            <div id="Easy-settings">
+                <div class="row">
+                  <div class="col-08">
+                      <p class="p-large">Basic vowels</p>
+                      <p class="p-small">ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ ㅜ ㅠ ㅡ ㅣ</p>
+                  </div>
+                  <div class="col-04">
+                      <button id="BV-Ch-button" class="sidenav-buttons green icon-font">done</button>
+                      <button id="BV-Unch-button"  class="sidenav-buttons red icon-font">clear</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-08">
+                      <p class="p-large">Compound vowels</p>
+                      <p class="p-small">ㅐ ㅒ ㅔ ㅖ ㅘ ㅙ ㅚ ㅝ ㅞ ㅟ ㅢ</p>
+                  </div>
+                  <div class="col-04">
+                      <button id="CV-Ch-button" class="sidenav-buttons green icon-font">done</button>
+                      <button id="CV-Unch-button" class="sidenav-buttons red icon-font">clear</button>
+                  </div>
+                 </div>
+                <div class="row">
+                  <div class="col-08">
+                      <p class="p-large">Basic consonants</p>
+                      <p class="p-small">ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅅ ㅇ ㅈ ㅊ ㅋ ㅌ ㅍ ㅎ</p>
+                  </div>
+                  <div class="col-04">
+                      <button id="BC-Ch-button" class="sidenav-buttons green icon-font">done</button>
+                      <button id="BC-Unch-button" class="sidenav-buttons red icon-font">clear</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-08">
+                      <p class="p-large">Compound consonants</p>
+                      <p class="p-small">ㄲ ㄸ ㅃ ㅆ ㅉ</p>
+                  </div>
+                  <div class="col-04">
+                      <button id="CC-Ch-button" class="sidenav-buttons green icon-font">done</button>
+                      <button id="CC-Unch-button" class="sidenav-buttons red icon-font">clear</button>
+                  </div>
+                </div>
+            </div>
+            <!-- Medium settings
+            ........................................................................................................ -->
+            <div id="Medium-settings">
+                <div class="row">
+                  <div class="col-08">
+                      <p class="p-medium">Basic consonants +</p>
+                      <p class="p-medium">basic vowels</p>
+                      <p class="p-small">syllables from 가 to 히</p>
+                  </div>
+                    <div class="col-04">
+                      <button id="BCBV-Ch-button" class="sidenav-buttons green icon-font">done</button>
+                      <button id="BCBV-Unch-button"  class="sidenav-buttons red icon-font">clear</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-08">
+                      <p class="p-medium">Basic consonants +</p>
+                      <p class="p-medium">compound vowels</p>
+                      <p class="p-small">syllables from 개 to 희</p>
+                  </div>
+                  <div class="col-04">
+                      <button id="BCCV-Ch-button" class="sidenav-buttons green icon-font">done</button>
+                      <button id="BCCV-Unch-button" class="sidenav-buttons red icon-font">clear</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-08">
+                      <p class="p-medium">Compound consonants +</p>
+                      <p class="p-medium">basic vowels</p>
+                      <p class="p-small">syllables from 까 to 찌</p>
+                  </div>
+                  <div class="col-04">
+                      <button id="CCBV-Ch-button" class="sidenav-buttons green icon-font">done</button>
+                      <button id="CCBV-Unch-button" class="sidenav-buttons red icon-font">clear</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-08">
+                      <p class="p-medium">Compound consonants +</p>
+                      <p class="p-medium">compound vowels</p>
+                      <p class="p-small">syllables from 깨 to 쯰</p>
+                  </div>
+                  <div class="col-04">
+                      <button id="CCCV-Ch-button" class="sidenav-buttons green icon-font">done</button>
+                      <button id="CCCV-Unch-button" class="sidenav-buttons red icon-font">clear</button>
+                  </div>
+                </div>
+            </div>
+            <!-- Hard settings
+            ........................................................................................................ -->
+            <div id="Hard-settings">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="p-large">Random syllables that are of I+M+F composition,</p>
+                        <p class="p-medium">e.g., 쟨 껅 븼 etc.</p>
+                        <p class="p-small"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Apply
+            ........................................................................................................ -->
+            <div class="row">
+                <div class="col-08" id="Warning-col"></div>
+                <div class="col-04">
+                    <button id="Apply-button" class="sidenav-buttons apply-buttons green">APPLY</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- STATISTICS SECTION
+    ................................................................................................................ -->
+    <section>
+        <br>
+
+         <div id="Stat-bar" class="row ">
+            <div class="col-04 hide-below-550"></div>
+                <div class="col-04">
+                        <div id="Stat-text">
+                            Correct answers: 0.
+                        </div>
+                        <div id="Stat-empty">
+                            <div id="Stat-filler"></div>
+                        </div>
+                </div>
+            <div class="col-04 hide-below-550"></div>
+        </div>
+    </section>
+        <div class="row align-center">
+            <button id="Counter-reset" type="button">reset</button>
+        </div>
+
+    <!-- JAVASCRIPT
+    ................................................................................................................ -->
+    <script src="{{ url_for('static', filename='js/app-style.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/app-main.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/app-sound.js')}}"></script>
+
+</body>
+</html>
